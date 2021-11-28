@@ -5,7 +5,7 @@
 #### Correo: alu0101216126@ull.edu.es
 #### [Acceda al sistema de recomendación](https://alu0101216126.github.io/RecommenderSystem/)
 
-## Índice
+## Índice 
 
 * [Introducción](#item1)
 * [Directorios](#item2)
@@ -17,7 +17,7 @@
   * [recommender.js](#item4.3) 
 
 <a name="item1"></a>
-## 1. Introducción
+## 1. Introducción :rocket:
 
 Implementación de un sistema de recomendación siguiendo el sistema de filtrado colaborativo.
 
@@ -27,7 +27,7 @@ Cabe destacar que para dar estilo al HTML, empleamos hojas de estilo **CSS**, y 
 [↑](#item0)
 
 <a name="item2"></a>
-## 2. Directorios
+## 2. Directorios :file_folder:
 
 Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderSystem/tree/main/docs), encontraremos una organización como la siguiente:
 
@@ -52,7 +52,7 @@ Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderS
 [↑](#item0)
 
 <a name="item3"></a>
-## 3. Instrucciones
+## 3. Instrucciones :page_with_curl:
 
 Para acceder al sistema recomendador lo haremos a través del enlace que aparece en la parte superior, o haciendo clic [aquí](https://alu0101216126.github.io/RecommenderSystem/).
 
@@ -86,10 +86,10 @@ Un ejemplo de ejecución sería el siguiente:
 [↑](#item0)
 
 <a name="item4"></a>
-## 4. Descripción del código
+## 4. Descripción del código :computer:
 
 <a name="item4.1"></a>
-### 4.1. index.html
+### 4.1. index.html 
 
 El fichero [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html), contiene el formulario a rellenar por parte del usuario, donde posteriormente será analizado.
 
@@ -217,5 +217,36 @@ Debido a que el usuario puede elegir las métricas o predicciones a usar, pues s
 ### **_Media de un usuario_**
 
 ```userAverage(user)```: Realizamos la media de los items de un usuario en la matriz de utilidad. Cabe destacar que aquellos items que no estén calificados, los obviaremos
+
+[↑](#item0)
+
+### **_Métricas de similitud_**
+
+A continuación se mostrarán las distintas métricas que podemos emplear:
+
+* #### **Correlación de Pearson: ** ```pearson(user1, user2)```
+
+Recibimos los dos índices de los usuarios a analizar. En el resultado obtenemos un índice que puede utilizarse para medir el grado de relación de dos variables, siempre y cuando ambas sean cuantitativas y continuas.
+
+Para ello, en primer lugar debemos de calcular la media de cada uno de los usuarios recibidos con el método ```userAverage(user)```. A continuación realizamos un bucle for que recorrerá la matriz de utilidad, teniendo en cuenta que las **calificaciones** que vayamos a emplear para la fórmula, deben haber sido calificadas por ambos usuarios previamente. La fórmula en cuestión es la siguiente:
+
+![pearson1](./docs/media/pearson1.png)
+![pearson2](./docs/media/pearson2.png)
+
+* #### **Distancia Coseno: ** ```cosine(user1, user2)```
+
+Si dos vectores tienen exactamente la misma orientación (el ángulo que forman es 0) su coseno toma el valor de 1, si son perpendiculares (forman un ángulo de 90) su coseno es 0 y si tienen orientaciones opuestas (ángulo de 180) su coseno es de -1.
+
+Tener en cuenta que realizamos un bucle for que recorrerá la matriz de utilidad, teniendo en cuenta que las **calificaciones** que vayamos a emplear para la fórmula, deben haber sido calificadas por ambos usuarios previamente. La fórmula en cuestión es la siguiente:
+
+![cosine](./docs/media/cosine.png)
+
+* #### **Distancia Euclídea: ** ```euclidean(user1, user2)```
+
+Entre dos puntos p y q se define como la longitud del segmento que une ambos puntos. Puede generalizarse para un espacio Euclídeo n-dimensional.
+
+Tener en cuenta que realizamos un bucle for que recorrerá la matriz de utilidad, teniendo en cuenta que las **calificaciones** que vayamos a emplear para la fórmula, deben haber sido calificadas por ambos usuarios previamente. La fórmula en cuestión es la siguiente:
+
+![euclidean](./docs/media/euclidean.png)
 
 [↑](#item0)

@@ -232,7 +232,7 @@ Debido a que el usuario puede elegir las métricas o predicciones a usar, pues s
 
 A continuación se mostrarán las distintas métricas que podemos emplear:
 
-* #### **Correlación de Pearson: ** ```pearson(user1, user2)```
+* #### Correlación de Pearson: ```pearson(user1, user2)```
 
 Recibimos los dos índices de los usuarios a analizar. En el resultado obtenemos un índice que puede utilizarse para medir el grado de relación de dos variables, siempre y cuando ambas sean cuantitativas y continuas.
 
@@ -249,7 +249,7 @@ Tener en cuenta que realizamos un bucle for que recorrerá la matriz de utilidad
 
 ![cosine](./docs/media/cosine.png)
 
-* #### **Distancia Euclídea: ** ```euclidean(user1, user2)```
+* #### Distancia Euclídea: ```euclidean(user1, user2)```
 
 Entre dos puntos p y q se define como la longitud del segmento que une ambos puntos. Puede generalizarse para un espacio Euclídeo n-dimensional.
 

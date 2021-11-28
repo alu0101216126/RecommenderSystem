@@ -10,6 +10,9 @@
 * [Directorios](#item2)
 * [Instrucciones](#item3)
 * [Descripción del código](#item4)
+  * [index.html](#item4.1) 
+  * [form.js](#item4.2)
+  * [recommender.js](#item4.3) 
 
 <a name="item1"></a>
 ## 1. Introducción
@@ -77,11 +80,53 @@ Un ejemplo de ejecución sería el siguiente:
 <a name="item4"></a>
 ## 4. Descripción del código
 
+<a name="item4.1"></a>
 ### 4.1. index.html
 
 El fichero [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html), contiene el formulario a rellenar por parte del usuario, donde posteriormente será analizado.
 
 La información del contenido de este fichero lo puede encontrar en las [Instrucciones](#item3). 
 
+<a name="item4.2"></a>
+### 4.2. form.js
 
+En [form.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/form.js), procesamos los datos obtenidos en el formulario, para posteriormente almacenarlos en variables, y mediante un objeto de la clase **Recommender**, obtener y mostrar los resultados.
 
+Para esto, primeramente, creamos un objeto de la clase Recommender que explicaremos más adelante. Lo llamaremos **recommender**:
+```javascript
+const recommender = new Recommender();
+```
+Una vez creado el objeto, podremos trabajar con los eventos para procesar y mostrar datos. Para conseguir esto, empleamos dos tipos de eventos:
+
+* Evento `change`: Este evento se activará cada vez que el input del campo que estamos observando cambie.
+
+```javascript
+const metrics = document.getElementById('metrics');
+metrics.addEventListener('change', function(e) {
+    recommender.setMetrics(e.target.value);
+});
+```
+Se puede observar en el ejemplo, que lo que haremos será obtener el campo que queremos analizar, que en este caso es la métrica a elegir. Posteriormente, cuando se active el evento, mediante el objeto recommender, almacenaremos el valor introducido. Esto aplicaría a todos los eventos que usan `change`.
+
+El caso más complejo en este caso, es al obtener la matriz mediante fichero. Lo que debemos de hacer en este caso es transformar dicho fichero a formato de matriz de números. 
+
+Para ello creamos la función `fileToMatrix`. Aquí creamos un objeto de la clase `FileReader()` que denominaremos `reader`. Una vez hecho esto, leemos el fichero recibido como texto:
+
+```javascript
+    const file = fileInput.files[0];
+    let reader = new FileReader();
+    let matrix = [];
+    reader.readAsText(file);
+```
+Cuando se acabe de leer el fichero correctamente, se activará el evento `load`. En este evento tranformaremos los datos para crear una matriz de números, y cambiaremos los '-' por el valor -1. Finalmente esta matriz se almacena en el objeto recommender.
+
+* Evento `click`: Este evento se activará cada vez que pulsemos el botón del campo que estamos observando.
+
+```javascript
+const generate = document.getElementById('generate');
+generate.addEventListener('click', function(e) {
+```
+Se puede observar en el ejemplo, que lo que haremos será obtener el campo que queremos analizar, que en este caso es el botón a pulsar. Posteriormente, cuando se active el evento, lo que haremos será realizar todos los cálculos con los valores almacenados hasta el momento, para finalmente mostrarlos.
+
+<a name="item4.3"></a>
+### 4.3. recommender.js

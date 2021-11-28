@@ -4,6 +4,12 @@
 #### Correo: alu0101216126@ull.edu.es
 #### [Acceda al sistema de recomendación](https://alu0101216126.github.io/RecommenderSystem/)
 
+### Índice
+
+* [Introducción](https://github.com/alu0101216126/RecommenderSystem#1-introducción)
+* [Directorios](https://github.com/alu0101216126/RecommenderSystem#2-directorios)
+* [Instrucciones](https://github.com/alu0101216126/RecommenderSystem#3-instrucciones)
+
 ### 1. Introducción
 
 Implementación de un sistema de recomendación siguiendo el sistema de filtrado colaborativo.
@@ -32,7 +38,7 @@ Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderS
   * [recommender.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/recommender.js): Contiene la clase **Recommender**, dicha clase almacena los datos obtenidos en el formulario y realiza los cálculos correspondientes para obtener: la matriz de utilidad con las predicciones, la matriz de similitud, los vecinos más optimos para cada item de algún usuario, y los cálculos realizados en las predicciones.
 * [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html): Fichero **HTML** que contiene el formulario a procesar mediante el fichero [form.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/form.js)
 
-### Instrucciones
+### 3. Instrucciones
 
 Para acceder al sistema recomendador lo haremos a través del enlace que aparece en la parte superior, o haciendo clic [aquí](https://alu0101216126.github.io/RecommenderSystem/).
 

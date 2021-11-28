@@ -144,6 +144,8 @@ generate.addEventListener('click', function(e) {
 ```
 Se puede observar en el ejemplo, que lo que haremos será obtener el campo que queremos analizar, que en este caso es el botón a pulsar. Posteriormente, cuando se active el evento, lo que haremos será realizar todos los cálculos con los valores almacenados hasta el momento, para finalmente mostrarlos.
 
+También existen otros métodos que simplemente se encargar de mostrar mediante HTML los resultados, estos son: ```matrixToTable(matrix, type = 'Item ', color = false, utilityMatrix = null)```, ```showNeighborsPerUser(array)``` y ```showPredictionsCalculation(array, prediction)```
+
 [↑](#item0)
 
 <a name="item4.3"></a>

@@ -145,7 +145,7 @@ Se puede observar en el ejemplo, que lo que haremos será obtener el campo que q
 
 El fichero [recommender.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/recommender.js), contiene la clase **Recommender**, dicha clase almacena los datos obtenidos en el formulario y realiza los cálculos correspondientes para obtener: la matriz de utilidad con las predicciones, la matriz de similitud, los vecinos más optimos para cada item de algún usuario, y los cálculos realizados en las predicciones.
 
-#### **_Constructor_**
+### **_Constructor_**
 
 El constructor por defecto de la clase es el siguiente:
 
@@ -176,7 +176,9 @@ Como los valores de los atributos cambian dinámicamente mediante el evento expl
 * `this.prediction`: Indica la predicción a emplear. `'1' = Predicción simple`, `'2' = Predicción basada en la diferencia con la media`
 * `this.metrics`: Indica la métrica a emplear. `'1' = Correlación de Pearson`,` '2' = Distancia coseno`,` '3' = Distancia Euclídea`
 
-#### **_Setters_**
+[↑](#item0)
+
+### **_Setters_**
 
 Como ya se ha comentado, los valores pueden cambiar dinámicamente, es por ello que se han implementado una serie de setters que modifican los valores de los atributos:
 
@@ -188,7 +190,9 @@ Como ya se ha comentado, los valores pueden cambiar dinámicamente, es por ello 
 * ```emptyNeighborsPerUser()```: Vacía el array de los vecinos más óptimos para cada item.
 * ```emptyCalculatePredictions()```: Vacía el array de los cálculos de predicción realizados.
 
-#### **_Getters_**
+[↑](#item0)
+
+### **_Getters_**
 
 Asimismo, también contamos con una serie de getters que nos devuelven los valores de algunos atributos.
 
@@ -199,13 +203,19 @@ Asimismo, también contamos con una serie de getters que nos devuelven los valor
 * ```getCalculatePredictions()```: Devuelve el array de cálculo de predicciones.
 * ```getPrediction()```: Devuelve el tipo de predicción elegida.
 
-#### **_Seleccionadores_**
+[↑](#item0)
+
+### **_Seleccionadores_**
 
 Debido a que el usuario puede elegir las métricas o predicciones a usar, pues se han creado métodos para cumplir con estas funciones.
 
 * ```similarity(user1, user2)```: Redirecciona a la métrica elegida, indicando los dos indices de los usuarios a analizar.
 * ```selectPrediction(user, item)```: Redirecciona al tipo de predicción elegido, indicando los índices del usuario y el item a analizar.
 
-
 [↑](#item0)
 
+### **_Media de un usuario_**
+
+```userAverage(user)```: Realizamos la media de los items de un usuario en la matriz de utilidad. Cabe destacar que aquellos items que no estén calificados, los obviaremos
+
+[↑](#item0)

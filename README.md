@@ -1,3 +1,4 @@
+<a name="item0"></a>
 # RecommenderSystem
 
 #### Autor: Daniel Álvarez Medina
@@ -10,6 +11,7 @@
 * [Directorios](#item2)
 * [Instrucciones](#item3)
 * [Descripción del código](#item4)
+
   * [index.html](#item4.1) 
   * [form.js](#item4.2)
   * [recommender.js](#item4.3) 
@@ -21,6 +23,8 @@ Implementación de un sistema de recomendación siguiendo el sistema de filtrado
 
 La práctica se ha llevado a cabo en el lenguaje **Javascript**. A su vez, la pedida de datos la hemos realizado en HTML y procesado posteriormente en Javascript.
 Cabe destacar que para dar estilo al HTML, empleamos hojas de estilo **CSS**, y también las proporcionadas por el framework de CSS [Materialize](https://materializecss.com).
+
+[↑](#item0)
 
 <a name="item2"></a>
 ## 2. Directorios
@@ -44,6 +48,8 @@ Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderS
   * [form.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/form.js): Procesamos los datos obtenidos en el formulario, y mediante un objeto de la clase **Recommender**, obtenemos y mostramos los resultados.
   * [recommender.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/recommender.js): Contiene la clase **Recommender**, dicha clase almacena los datos obtenidos en el formulario y realiza los cálculos correspondientes para obtener: la matriz de utilidad con las predicciones, la matriz de similitud, los vecinos más optimos para cada item de algún usuario, y los cálculos realizados en las predicciones.
 * [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html): Fichero **HTML** que contiene el formulario a procesar mediante el fichero [form.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/form.js)
+
+[↑](#item0)
 
 <a name="item3"></a>
 ## 3. Instrucciones
@@ -77,6 +83,8 @@ Un ejemplo de ejecución sería el siguiente:
  </a>
 </p>
 
+[↑](#item0)
+
 <a name="item4"></a>
 ## 4. Descripción del código
 
@@ -86,6 +94,8 @@ Un ejemplo de ejecución sería el siguiente:
 El fichero [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html), contiene el formulario a rellenar por parte del usuario, donde posteriormente será analizado.
 
 La información del contenido de este fichero lo puede encontrar en las [Instrucciones](#item3). 
+
+[↑](#item0)
 
 <a name="item4.2"></a>
 ### 4.2. form.js
@@ -127,6 +137,8 @@ const generate = document.getElementById('generate');
 generate.addEventListener('click', function(e) {
 ```
 Se puede observar en el ejemplo, que lo que haremos será obtener el campo que queremos analizar, que en este caso es el botón a pulsar. Posteriormente, cuando se active el evento, lo que haremos será realizar todos los cálculos con los valores almacenados hasta el momento, para finalmente mostrarlos.
+
+[↑](#item0)
 
 <a name="item4.3"></a>
 ### 4.3. recommender.js

@@ -250,3 +250,70 @@ Tener en cuenta que realizamos un bucle for que recorrerá la matriz de utilidad
 ![euclidean](./docs/media/euclidean.png)
 
 [↑](#item0)
+
+* ### **Calcular vecinos más cercanos: ** ```getCloserNeighbors(user, item)``` 
+
+Este método permite calcular los vecinos más cercanos de un usuario en función de la métrica de similitud. Esté método nos será útil a la hora de realizar los cálculos de predicciones, ya que necesitamos estos vecinos para los cálculos.
+
+Primero calculamos todos los vecinos posibles de 'user' descartando aquellos que tengan un item sin calificar en la misma posición que 'user'.
+```javascript
+for (let i = 0; i < this.matrix.length; i++) {
+            if (i != user && this.matrix[i][item] >= 0) {
+                neighbors.push({
+                    user: i,
+                    similarity: this.similarityMatrix[user][i]
+                });
+            }
+        }
+```
+
+Ahora ordenamos los vecinos por similitud. En Pearson o Distancia coseno, cuanto más grande sea el valor mejor, en Euclídea es a la inversa.
+
+```javascript
+if (this.metrics == '1' || this.metrics == '2') 
+            neighbors.sort(function(a, b) { return b.similarity - a.similarity; });
+        else 
+            neighbors.sort(function(a, b) { return a.similarity - b.similarity; }); 
+```
+
+Elegimos la cantidad de vecinos próximos necesarias (this.neighbors).
+
+```javascript
+let result = [];
+        for (let i = 0; i < this.neighbors; i++) 
+            if (neighbors[i] != null) result.push(neighbors[i]);
+```
+
+Finalmente guardamos esos vecinos en nuestro array de vecinos por item, y retornamos el resultado
+
+```javascript
+this.neighborsPerUser.push([user, item, result]);
+return result;
+```
+
+[↑](#item0)
+
+* ### **Predicción simple: ** ```simplePrediction(user, item)``` 
+
+Permite calcular el valor desconocido de predicción simple utilizando las puntuaciones asignadas a los ítems i de los usuarios v más parecidos (vecinos más próximos).
+
+Debemos obtener los vecinos más próximos mediante el método ```getCloserNeighbors(user, item)```, recorrerlos aplicando la fórmula:
+
+![simple](./docs/media/simple.png)
+
+Finalmente guardamos los cálculos en nuestro array de cálculos de predicciones y retornamos el resultado.
+
+[↑](#item0)
+
+* ### **Predicción basada en la diferencia con la media: ** ```meanDifferencePrediction(user, item)``` 
+
+Permite calcular el valor desconocido de predicción  basada en la diferencia con la media, utilizando las puntuaciones asignadas a los ítems i de los usuarios v más parecidos (vecinos más próximos).
+
+Debemos obtener los vecinos más próximos mediante el método ```getCloserNeighbors(user, item)```, recorrerlos aplicando la fórmula:
+
+![mean](./docs/media/mean.png)
+
+Finalmente guardamos los cálculos en nuestro array de cálculos de predicciones y retornamos el resultado.
+
+[↑](#item0)
+

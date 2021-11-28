@@ -184,11 +184,11 @@ Como ya se ha comentado, los valores pueden cambiar dinámicamente, es por ello 
 * ```setMetrics(metrics)```: Establece la métrica elegida.
 * ```setNeighbors(neighbors)```: Establece la cantidad de usuarios a considerar.
 * ```setPrediction(prediction)```: Establece el tipo de predicción a calcular.
-* ```setSimilarityMatrix()```: Calcula y establece la matriz de similitud.
+* ```setSimilarityMatrix()```: Calcula y establece la matriz de similitud. A través de la matriz de utilidad calcula la relación que tiene cada usuario con el resto mediante la métrica de solicitud indicada. De esta manera obtenemos una matriz cuadrada con el valor de similitud entre los distintos usuarios.
 * ```emptyNeighborsPerUser()```: Vacía el array de los vecinos más óptimos para cada item.
 * ```emptyCalculatePredictions()```: Vacía el array de los cálculos de predicción realizados.
 
-### **_Getters_**
+#### **_Getters_**
 
 Asimismo, también contamos con una serie de getters que nos devuelven los valores de algunos atributos.
 
@@ -198,6 +198,14 @@ Asimismo, también contamos con una serie de getters que nos devuelven los valor
 * ```getNeighborsPerUser()```: Devuelve el array de vecinos de un usuario.
 * ```getCalculatePredictions()```: Devuelve el array de cálculo de predicciones.
 * ```getPrediction()```: Devuelve el tipo de predicción elegida.
+
+#### **_Seleccionadores_**
+
+Debido a que el usuario puede elegir las métricas o predicciones a usar, pues se han creado métodos para cumplir con estas funciones.
+
+* ```similarity(user1, user2)```: Redirecciona a la métrica elegida, indicando los dos indices de los usuarios a analizar.
+* ```selectPrediction(user, item)```: Redirecciona al tipo de predicción elegido, indicando los índices del usuario y el item a analizar.
+
 
 [↑](#item0)
 

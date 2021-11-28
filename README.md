@@ -32,8 +32,36 @@ Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderS
   * [recommender.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/recommender.js): Contiene la clase **Recommender**, dicha clase almacena los datos obtenidos en el formulario y realiza los cálculos correspondientes para obtener: la matriz de utilidad con las predicciones, la matriz de similitud, los vecinos más optimos para cada item de algún usuario, y los cálculos realizados en las predicciones.
 * [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html): Fichero **HTML** que contiene el formulario a procesar mediante el fichero [form.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/form.js)
 
+### Instrucciones
 
+Para acceder al sistema recomendador lo haremos a través del enlace que aparece en la parte superior, o haciendo clic [aquí](https://alu0101216126.github.io/RecommenderSystem/).
 
+![Formato inicial del formulario](./docs/media/initialForm.png)
+
+Veremos que tenemos un formulario con una serie de campos:
+
+* En primer lugar, se nos indica que seleccionemos una matriz de utilidad. Dicha matriz la debemos de subir en formato `.txt`, al pusar el botón de **Seleccionar arhivo**. En [/examples](https://github.com/alu0101216126/RecommenderSystem/tree/main/docs/examples) podemos encontrar algunas matrices de ejemplo. 
+* Posteriormente debemos de seleccionar la métrica a emplear, tenemos tres opciones:
+
+  * Correlación de Pearson
+  * Distancia Coseno
+  * Distancia Euclídea 
+
+* A continuación elegimos la cantidad de vecinos, donde la cantidad mínima es 3. Si se introduce un valor inferior, se tomará el 3 como referencia.
+* Finalmente debemos de elegir el tipo de predicción, donde puede ser:
+  
+  * Predicción simple
+  * Diferencia con la media 
+
+Una vez seleccionado todos los campos, pulsaremos el botón de **Generar Predicción** para mostrar los resultados.
+
+Un ejemplo de ejecución sería el siguiente:
+
+<p align="center">
+ <a href="https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/media/formExample.gif">
+  <img src="./docs/media/formExample.gif" style="max-width:100%; width: 150%">
+ </a>
+</p>
 
 
 

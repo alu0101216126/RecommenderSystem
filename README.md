@@ -142,3 +142,37 @@ Se puede observar en el ejemplo, que lo que haremos será obtener el campo que q
 
 <a name="item4.3"></a>
 ### 4.3. recommender.js
+
+El fichero [recommender.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/recommender.js), contiene la clase **Recommender**, dicha clase almacena los datos obtenidos en el formulario y realiza los cálculos correspondientes para obtener: la matriz de utilidad con las predicciones, la matriz de similitud, los vecinos más optimos para cada item de algún usuario, y los cálculos realizados en las predicciones.
+
+#### **_Constructor_**
+
+El constructor por defecto de la clase es el siguiente:
+
+```javascript
+constructor() {
+        this.matrix = [];
+        this.transformedMatrix = [];
+        this.similarityMatrix = [];
+        this.neighborsPerUser = [];
+        this.calculatePredictions = [];
+        this.neighbors = 3; // Mínimo 3 vecinos
+        this.prediction = '1';
+        this.metrics = '1';  
+      }
+```
+Como los valores de los atributos cambian dinámicamente mediante el evento explicado `change`, todos los atributos tendrán valores por defecto hasta que estos cambien.
+
+* `this.matrix`: Matriz de utilidad que contiene un -1 en aquellos items que no han sido calificados.
+* `this.transformedMatrix`: Matriz de utilidad que contiene los resultados de los cálculos de predicciones realizados en aquellos items sin calificación.
+* `this.similarityMatrix`: Matriz de similitud entre los usuarios. Basada en la métrica empleada
+* `this.neighborsPerUser`: Array de array de tipo `[[usuario, item, vecinos], ...]`. Almacena los vecinos más óptimos para cada item, especificando su usuario. Cabe destacar que `vecinos` contiene los vecinos óptimos.
+* `this.calculatePredictions`: Array de array que almacenará los cálculos de predicción realizados.
+
+  * En el caso de predicción simple, el formato es: `[[usuario, item, numerador, denominador, resultado], ...]`
+  * En el caso de predicción basada en diferencia con la media, el formato es: `[[usuario, item, numerador, denominador, resultado, media del usuario], ...]`
+  
+* `this.neighbors`: Cantidad de vecinos a considerar. Mínimo debe de ser 3.
+* `this.prediction`: Indica la predicción a emplear. `'1' = Predicción simple`, `'2' = Predicción basada en la diferencia con la media`
+* `this.metrics`: Indica la métrica a emplear. `'1' = Correlación de Pearson`,` '2' = Distancia coseno`,` '3' = Distancia Euclídea`
+

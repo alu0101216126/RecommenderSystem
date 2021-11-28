@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matriz de utilidad</title>
+
+    <!--- Style -->
+    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="blue darken-1">
+    <div class="container background-border">
+        <div class="row ">
+            <div class="col s12">
+                <h2 class="center">Sistemas de recomendación</h2>
+            </div>
+            <div class="col s8 offset-s2">
+                <form action="#">
+                    <div class="row">
+                        <div class="col s12">
+                            <label class="black-text " for="matrix">Seleccione  una matriz de utilidad:</label><br>
+                            <input type="file" accept=".txt" name="matrix" id="matrix">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label class="black-text " for="metrics">Seleccione la métrica a emplear:</label>
+                            <select class="browser-default" id="metrics">
+                                <option value="" disabled selected>Elige una opción</option>
+                                <option value="1">Correlación de Pearson</option>
+                                <option value="2">Distancia coseno</option>
+                                <option value="3">Distancia Euclídea</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label class="black-text " for="neighbors">Indique la cantidad de vecinos:</label>
+                            <p>La cantidad mínima es 3. Si se introduce un valor inferior, se tomará el 3 como referencia.</p>
+                            <input type="number" name="neighbors" id="neighbors"> 
+                        </div>          
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label class="black-text " for="prediction">Seleccione el tipo de predicción:</label>
+                            <select class="browser-default" id="prediction">
+                                <option value="" disabled selected>Elige una opción</option>
+                                <option value="1">Predicción simple</option>
+                                <option value="2">Diferencia con la media</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s12 center">
+                <button id="generate" class="btn waves-effect waves-light blue darken-2" type="button">Generar predicción</button>
+            </div>
+            <div class="col s12 center" id="originalMatrix"> Después de introducir los datos se mostrará el resultado</div>  
+            <div class="col s12 center" id="similarityMatrix"></div>
+            <div class="col s12 center" id="transformedMatrix"></div>
+            <div class="col s12" id="neighborsPerUser"></div>
+            <div class="col s12" id="calculatePredictions"></div>
+        </div> 
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="./src/recommender.js"></script>
+    <script type="text/javascript" src="./src/form.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>   
+</html>
+

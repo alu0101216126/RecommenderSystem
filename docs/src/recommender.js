@@ -143,8 +143,14 @@ class Recommender {
         }
 
         let denominator = Math.sqrt(denominator1) * Math.sqrt(denominator2);
+        let result = numerator / denominator;
 
-        return numerator / denominator;
+        // Normalizamos en caso de negativo
+        if (result < 0) {
+            result = (result - (-1)) / (1 - (-1));
+        }
+
+        return result;
     }
 
     //  Método de similitud: distancia Coseno entre dos usuarios

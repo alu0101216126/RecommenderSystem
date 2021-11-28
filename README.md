@@ -10,6 +10,9 @@
 * [Introducción](#item1)
 * [Directorios](#item2)
 * [Instrucciones](#item3)
+
+  * [Ejemplo de uso](#item3.1)
+ 
 * [Descripción del código](#item4)
 
   * [index.html](#item4.1) 
@@ -74,6 +77,9 @@ Veremos que tenemos un formulario con una serie de campos:
   * Diferencia con la media 
 
 Una vez seleccionado todos los campos, pulsaremos el botón de **GENERAR PREDICCIÓN** para mostrar los resultados.
+
+<a name="item3.1"></a>
+### 3.1 Ejemplo de uso 
 
 Un ejemplo de ejecución sería el siguiente:
 
@@ -233,7 +239,7 @@ Para ello, en primer lugar debemos de calcular la media de cada uno de los usuar
 ![pearson1](./docs/media/pearson1.png)
 ![pearson2](./docs/media/pearson2.png)
 
-* #### **Distancia Coseno: ** ```cosine(user1, user2)```
+* #### Distancia Coseno: ```cosine(user1, user2)```
 
 Si dos vectores tienen exactamente la misma orientación (el ángulo que forman es 0) su coseno toma el valor de 1, si son perpendiculares (forman un ángulo de 90) su coseno es 0 y si tienen orientaciones opuestas (ángulo de 180) su coseno es de -1.
 
@@ -251,7 +257,7 @@ Tener en cuenta que realizamos un bucle for que recorrerá la matriz de utilidad
 
 [↑](#item0)
 
-* ### **Calcular vecinos más cercanos: ** ```getCloserNeighbors(user, item)``` 
+* ### Calcular vecinos más cercanos: ```getCloserNeighbors(user, item)``` 
 
 Este método permite calcular los vecinos más cercanos de un usuario en función de la métrica de similitud. Esté método nos será útil a la hora de realizar los cálculos de predicciones, ya que necesitamos estos vecinos para los cálculos.
 
@@ -293,7 +299,7 @@ return result;
 
 [↑](#item0)
 
-* ### **Predicción simple: ** ```simplePrediction(user, item)``` 
+* ### Predicción simple: ```simplePrediction(user, item)``` 
 
 Permite calcular el valor desconocido de predicción simple utilizando las puntuaciones asignadas a los ítems i de los usuarios v más parecidos (vecinos más próximos).
 
@@ -305,7 +311,7 @@ Finalmente guardamos los cálculos en nuestro array de cálculos de predicciones
 
 [↑](#item0)
 
-* ### **Predicción basada en la diferencia con la media: ** ```meanDifferencePrediction(user, item)``` 
+* ### Predicción basada en la diferencia con la media: ```meanDifferencePrediction(user, item)``` 
 
 Permite calcular el valor desconocido de predicción  basada en la diferencia con la media, utilizando las puntuaciones asignadas a los ítems i de los usuarios v más parecidos (vecinos más próximos).
 
@@ -314,6 +320,16 @@ Debemos obtener los vecinos más próximos mediante el método ```getCloserNeigh
 ![mean](./docs/media/mean.png)
 
 Finalmente guardamos los cálculos en nuestro array de cálculos de predicciones y retornamos el resultado.
+
+[↑](#item0)
+
+* ### Matriz de utilidad con predicciones realizadas: ```transformMatrix()```
+
+Método que transforma la matriz de utilidad, calificando aquellos items vacíos mediante las predicciones.
+
+Primero realizamos una copia de nuestra matriz de utilidad y la denominamos ```transformedMatrix```. Ahora recorreremos la matriz de utilidad, y donde encontremos un item sin calificar (-1), aplicaremos la predicción.
+
+Finalmente retornamos la matriz transformada.
 
 [↑](#item0)
 

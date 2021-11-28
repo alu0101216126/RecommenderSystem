@@ -9,6 +9,7 @@
 * [Introducción](#item1)
 * [Directorios](#item2)
 * [Instrucciones](#item3)
+* [Descripción del código](#item4)
 
 <a name="item1"></a>
 ## 1. Introducción
@@ -80,6 +81,7 @@ Un ejemplo de ejecución sería el siguiente:
 
 El fichero [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html), contiene el formulario a rellenar por parte del usuario, donde posteriormente será analizado.
 
+La información del contenido de este fichero lo puede encontrar en las [Instrucciones](#item3). 
 
 
 

@@ -176,3 +176,28 @@ Como los valores de los atributos cambian dinámicamente mediante el evento expl
 * `this.prediction`: Indica la predicción a emplear. `'1' = Predicción simple`, `'2' = Predicción basada en la diferencia con la media`
 * `this.metrics`: Indica la métrica a emplear. `'1' = Correlación de Pearson`,` '2' = Distancia coseno`,` '3' = Distancia Euclídea`
 
+#### **_Setters_**
+
+Como ya se ha comentado, los valores pueden cambiar dinámicamente, es por ello que se han implementado una serie de setters que modifican los valores de los atributos:
+
+* ```setMatrix(matrix)```: Establece la matriz de utilidad y reinicia los arrays en el caso en que se cambie la matriz de utilidad.
+* ```setMetrics(metrics)```: Establece la métrica elegida.
+* ```setNeighbors(neighbors)```: Establece la cantidad de usuarios a considerar.
+* ```setPrediction(prediction)```: Establece el tipo de predicción a calcular.
+* ```setSimilarityMatrix()```: Calcula y establece la matriz de similitud.
+* ```emptyNeighborsPerUser()```: Vacía el array de los vecinos más óptimos para cada item.
+* ```emptyCalculatePredictions()```: Vacía el array de los cálculos de predicción realizados.
+
+### **_Getters_**
+
+Asimismo, también contamos con una serie de getters que nos devuelven los valores de algunos atributos.
+
+* ```getOriginalMatrix()```: Devuelve la matriz de utilidad.
+* ```getSimilarityMatrix```: Devuelve la matriz de similitud.
+* ```getTransformedMatrix()```: Devuelve la matriz de utilidad tras la calificación a través de la predicción.
+* ```getNeighborsPerUser()```: Devuelve el array de vecinos de un usuario.
+* ```getCalculatePredictions()```: Devuelve el array de cálculo de predicciones.
+* ```getPrediction()```: Devuelve el tipo de predicción elegida.
+
+[↑](#item0)
+

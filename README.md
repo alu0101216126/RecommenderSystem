@@ -4,19 +4,22 @@
 #### Correo: alu0101216126@ull.edu.es
 #### [Acceda al sistema de recomendación](https://alu0101216126.github.io/RecommenderSystem/)
 
-### Índice
+## Índice
 
-* [Introducción](https://github.com/alu0101216126/RecommenderSystem#1-introducción)
-* [Directorios](https://github.com/alu0101216126/RecommenderSystem#2-directorios)
-* [Instrucciones](https://github.com/alu0101216126/RecommenderSystem#3-instrucciones)
+* [Introducción](#item1)
+* [Directorios](#item2)
+* [Instrucciones](#item3)
 
-### 1. Introducción
+<a name="item1"></a>
+## 1. Introducción
 
 Implementación de un sistema de recomendación siguiendo el sistema de filtrado colaborativo.
 
 La práctica se ha llevado a cabo en el lenguaje **Javascript**. A su vez, la pedida de datos la hemos realizado en HTML y procesado posteriormente en Javascript.
+Cabe destacar que para dar estilo al HTML, empleamos hojas de estilo **CSS**, y también las proporcionadas por el framework de CSS [Materialize](https://materializecss.com).
 
-### 2. Directorios
+<a name="item2"></a>
+## 2. Directorios
 
 Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderSystem/tree/main/docs), encontraremos una organización como la siguiente:
 
@@ -38,7 +41,8 @@ Si accedemos al directorio [/docs](https://github.com/alu0101216126/RecommenderS
   * [recommender.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/recommender.js): Contiene la clase **Recommender**, dicha clase almacena los datos obtenidos en el formulario y realiza los cálculos correspondientes para obtener: la matriz de utilidad con las predicciones, la matriz de similitud, los vecinos más optimos para cada item de algún usuario, y los cálculos realizados en las predicciones.
 * [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html): Fichero **HTML** que contiene el formulario a procesar mediante el fichero [form.js](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/src/form.js)
 
-### 3. Instrucciones
+<a name="item3"></a>
+## 3. Instrucciones
 
 Para acceder al sistema recomendador lo haremos a través del enlace que aparece en la parte superior, o haciendo clic [aquí](https://alu0101216126.github.io/RecommenderSystem/).
 
@@ -59,7 +63,7 @@ Veremos que tenemos un formulario con una serie de campos:
   * Predicción simple
   * Diferencia con la media 
 
-Una vez seleccionado todos los campos, pulsaremos el botón de **Generar Predicción** para mostrar los resultados.
+Una vez seleccionado todos los campos, pulsaremos el botón de **GENERAR PREDICCIÓN** para mostrar los resultados.
 
 Un ejemplo de ejecución sería el siguiente:
 
@@ -68,6 +72,14 @@ Un ejemplo de ejecución sería el siguiente:
   <img src="./docs/media/formExample.gif" style="max-width:100%; width: 150%">
  </a>
 </p>
+
+<a name="item4"></a>
+## 4. Descripción del código
+
+### 4.1. index.html
+
+El fichero [index.html](https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/index.html), contiene el formulario a rellenar por parte del usuario, donde posteriormente será analizado.
+
 
 
 

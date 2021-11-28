@@ -89,6 +89,14 @@ Un ejemplo de ejecución sería el siguiente:
  </a>
 </p>
 
+Otro ejemplo podría ser: 
+
+<p align="center">
+ <a href="https://github.com/alu0101216126/RecommenderSystem/blob/main/docs/media/formExample2.gif">
+  <img src="./docs/media/formExample2.gif" style="max-width:100%; width: 150%">
+ </a>
+</p>
+
 [↑](#item0)
 
 <a name="item4"></a>
